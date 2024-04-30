@@ -7,7 +7,16 @@
 class PixItem : public QGraphicsItem
 {
 public:
-    PixItem();
+    PixItem(QPixmap * pixmap);
+private:
+    QPixmap pix;
+public:
+
+    QRectF boundingRect() const override;
+    void paint(QPainter *painter,
+               const QStyleOptionGraphicsItem *option,
+               QWidget *widget) override;
+
 };
 
 #endif // PIXITEM_H
